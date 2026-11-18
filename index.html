@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AnchorPoints Aquaponics – Growing Together</title>
+<style>
+:root{--g:#1f7a3a;--gd:#14532d;--bg:#f3f6f3;--card:#fff;--tx:#1c2a1f;--mut:#5b6b5f;--line:#dfe7e0}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1712;--card:#18231b;--tx:#eaf3ec;--mut:#9fb2a4;--line:#2a3a2e;--g:#4cc274;--gd:#86e0a3}}
+*{box-sizing:border-box}
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--tx);line-height:1.5}
+header{background:linear-gradient(135deg,#14532d,#1f7a3a);color:#fff;text-align:center;padding:36px 16px}
+header h1{margin:0 0 6px;font-size:clamp(1.5rem,4vw,2.3rem)}
+header p{margin:0;opacity:.9}
+main{max-width:1000px;margin:0 auto;padding:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin:16px 0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.notice{border-left:5px solid var(--g)}
+h2{margin:0 0 10px;color:var(--gd)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;text-align:center}
+.stat b{display:block;font-size:1.9rem;color:var(--g)}
+.stat span{color:var(--mut);font-size:.9rem}
+.bar{height:30px;background:var(--line);border-radius:16px;overflow:hidden;margin-top:14px}
+.bar div{height:100%;background:linear-gradient(90deg,var(--g),#7ed957);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:flex-end;padding-right:10px;min-width:44px;transition:width .6s}
+.viewer{position:relative;aspect-ratio:923/753;border-radius:12px;overflow:hidden;background:#000}
+.viewer img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#future{clip-path:inset(0 100% 0 0);transition:clip-path .6s}
+.edge{position:absolute;top:0;bottom:0;width:3px;background:#fff;box-shadow:0 0 8px #000;transition:left .6s}
+.tag{position:absolute;top:10px;padding:4px 10px;border-radius:20px;font-size:.8rem;font-weight:700;color:#fff;background:rgba(0,0,0,.6)}
+.stage{margin:12px 0 0;font-weight:600;color:var(--gd)}
+.demo{margin-top:12px;font-size:.9rem;color:var(--mut)}
+.demo input{width:100%}
+ul.ms{list-style:none;padding:0;margin:0}
+.ms li{display:flex;gap:12px;align-items:center;padding:12px;margin:8px 0;border-radius:10px;background:var(--bg);border:1px solid var(--line)}
+.ms li.done{background:rgba(76,194,116,.18);border-color:var(--g)}
+.ms .box{flex:0 0 26px;height:26px;border:2px solid var(--mut);border-radius:6px;display:grid;place-items:center;font-weight:700;color:#fff}
+.ms li.done .box{background:var(--g);border-color:var(--g)}
+.ms small{display:block;color:var(--mut)}
+.ms .amt{margin-left:auto;font-weight:700;white-space:nowrap}
+.btn{display:inline-block;background:var(--g);color:#fff;text-decoration:none;padding:12px 24px;border-radius:30px;font-weight:700}
+footer{text-align:center;color:var(--mut);font-size:.85rem;padding:24px 16px}
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.three div{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:16px}
+.three h3{margin:0 0 6px;color:var(--g);font-size:1.1rem}
+.three ul{margin:8px 0 0;padding-left:18px;color:var(--tx)}
+.lead{color:var(--mut)}
+.van{width:100%;border-radius:12px;display:block;margin-top:12px}
+</style>
+</head>
+<body>
+<header>
+<h1>AnchorPoints Aquaponics</h1>
+<p>Growing Together: Securing the Ground for a Community Farm &bull; Okmulgee, Oklahoma</p>
+</header>
+<main>
+
+<section class="card notice">
+<h2>Why this land matters to all of us</h2>
+<p><b>This is a community project, and it starts with the ground beneath it.</b> AnchorPoints Aquaponics is planned as a state-of-the-art aquaponics farm and training and education center, designed to be ADA-compliant, AI-automated, solar-powered, energy-efficient, and climate-controlled: a place for fresh, locally grown food, hands-on education, workforce training, and opportunities for young people, families, and neighbors.</p>
+<p>Your gift to this campaign goes toward securing the land so this work can begin. Once the land is fully secured, we can move on to development and the financing to build an ADA-compliant, AI-automated, solar-powered, energy-efficient, climate-controlled facility that serves the whole community. (Donations here are for the land only, not for construction.)</p>
+<p>The pictures below show the land today and the vision it is growing toward. Each gift brings that vision a little closer for everyone it will serve.</p>
+</section>
+
+<section class="card">
+<h2>Meet the Family Behind AnchorPoints</h2>
+<p>AnchorPoints Aquaponics is a <b>minority-owned</b> business, led by <b>Leon White and his four daughters</b>. This is a family dream with a community purpose: to grow healthy food, create jobs, and open doors for young people and neighbors in Okmulgee and the communities around us.</p>
+</section>
+
+<section class="card">
+<div class="stats">
+<div class="stat"><b id="raised">$0</b><span>Raised together</span></div>
+<div class="stat"><b id="goal">$190,000</b><span>Our goal</span></div>
+<div class="stat"><b id="left">$0</b><span>Still to go</span></div>
+</div>
+<div class="bar"><div id="fill">0%</div></div>
+<p class="demo" id="exampleNote" hidden><b>Note:</b> the amount shown is an example only, not real donations.</p>
+</section>
+
+<section class="card">
+<h2>Watch Open Land Come Alive!</h2>
+<p class="lead">Every gift wakes up a little more of the dream. Watch the quiet trees and brush by the lake transform into a thriving, AI-automated, solar-powered, energy-efficient, climate-controlled farm and training and learning campus. Drag the slider to see it grow!</p>
+<div class="viewer" id="viewer">
+<img src="images/current-land.jpg" alt="Aerial view of the property today: trees, brush and open grass beside the lake">
+<img id="future" src="images/future-facility.jpg" alt="Rendering of the completed AnchorPoints Aquaponics facility">
+<div class="edge" id="edge"></div>
+<span class="tag" style="left:10px">TODAY</span>
+<span class="tag" style="right:10px">THE VISION</span>
+</div>
+<p class="stage" id="stage"></p>
+<div class="demo">Preview the journey (this does not change the real total):
+<input type="range" id="preview" min="0" max="190000" step="1000" aria-label="Preview donation amount"></div>
+</section>
+
+<section class="card">
+<h2>Learning, Opportunity &amp; Growth for Everyone</h2>
+<p class="lead">Once the land is secured, AnchorPoints is planned as an education and community center, not just a farm. We are also eager to partner with colleges and offer internships to their students. Here is what we hope to offer.</p>
+<div class="three">
+<div><h3>Youth</h3>
+<p>Hands-on, real-world learning that makes science and agriculture exciting.</p>
+<ul><li>Aquaponics and STEM education</li><li>Youth agricultural leadership programs</li><li>Mentoring and confidence-building</li><li>Outdoor classrooms and community gardens</li></ul></div>
+<div><h3>Young Adults</h3>
+<p>Practical skills and a path to good work in a growing field.</p>
+<ul><li>Workforce training and job readiness</li><li>AI and technology in agriculture</li><li>Entrepreneur development</li><li>Climate-controlled, year-round growing skills</li></ul></div>
+<div><h3>College Students</h3>
+<p>Real-world experience that builds résumés and careers.</p>
+<ul><li>Internships and hands-on training in aquaponics, AI, and sustainable agriculture</li><li>Partnerships with colleges and universities</li><li>Our hope: partner colleges will offer credit hours for students who take part</li><li>Research and innovation projects</li></ul></div>
+<div><h3>The Whole Community</h3>
+<p>A welcoming place where neighbors learn, gather, and share.</p>
+<ul><li>Fresh, locally grown fish and produce, raised without chemical pesticides, plus family food production</li><li>Classes, events, and a community meeting hall</li><li>ADA-compliant public areas, including parking, so everyone can take part</li><li>A model other communities can learn from</li></ul></div>
+</div>
+<p class="lead" style="margin-bottom:0">Programs shown are part of our planned vision and may grow and change as the project develops. College credit and partnerships depend on agreements with each school.</p>
+</section>
+
+<section class="card">
+<h2>From Our Farm to Your Table</h2>
+<p>Our plan is to deliver fresh fish, greens, herbs, fruits, and vegetables to communities within about 50 miles of Okmulgee, such as Tulsa, Beggs, and Muskogee, using our AnchorPoints delivery truck. Delivery plans will be finalized as the farm develops.</p>
+<img class="van" src="images/delivery-van.jpg" alt="AnchorPoints delivery truck: Feeding communities. Providing jobs. Nourishing lives.">
+</section>
+
+<section class="card">
+<h2>Our Journey Together</h2>
+<ul class="ms" id="ms"></ul>
+</section>
+
+<section class="card" style="text-align:center">
+<h2>Latest Update</h2>
+<p id="update"></p>
+<a class="btn" id="gfm" href="https://www.gofundme.com/" target="_blank" rel="noopener">Help Us Grow Together</a>
+</section>
+
+</main>
+<footer>&copy; AnchorPoints Aquaponics. People &bull; Food &bull; Opportunity &bull; A Stronger Tomorrow.</footer>
+
+<script>
+/* ===== EDIT ONLY THIS BLOCK TO UPDATE THE TRACKER ===== */
+const CONFIG = {
+  goal: 190000,
+  raised: 0,               // <-- change this number as donations come in
+  isExample: false,        // <-- set to false when using real numbers
+  gofundmeUrl: "https://www.gofundme.com/",  // <-- paste your GoFundMe link
+  update: "Thank you for caring about this community. Every gift helps secure the land where families will learn, grow food, and build skills for a stronger tomorrow."
+};
+const STAGES = [
+  {at:0,      name:"Where We Begin",           note:"Open land, trees and possibility by the lake"},
+  {at:25000,  name:"Community Support Grows", note:"Neighbors and friends start clearing the way"},
+  {at:60000,  name:"Gaining Momentum",         note:"The next steps toward building come into sight"},
+  {at:100000, name:"The Vision Takes Shape",   note:"A place for food, learning and opportunity"},
+  {at:150000, name:"Almost There",            note:"One last push to secure the land"},
+  {at:190000, name:"Ready to Grow",           note:"Land secured and ready for the AnchorPoints Aquaponics Farm"}
+];
+/* ===== END EDIT BLOCK ===== */
+
+const $=id=>document.getElementById(id);
+const money=n=>"$"+Math.round(n).toLocaleString("en-US");
+function render(amount,real){
+  const pct=Math.min(100,Math.max(0,amount/CONFIG.goal*100));
+  $("future").style.clipPath="inset(0 "+(100-pct)+"% 0 0)";
+  $("edge").style.left=pct+"%";
+  $("edge").style.display=(pct<=0||pct>=100)?"none":"block";
+  const f=$("fill");f.style.width=pct+"%";f.textContent=(pct<1&&pct>0?pct.toFixed(1):Math.round(pct))+"%";
+  let cur=STAGES[0];STAGES.forEach(s=>{if(amount>=s.at)cur=s});
+  $("stage").textContent="Stage: "+cur.name+" \u2014 "+cur.note;
+  if(real){
+    $("raised").textContent=money(amount);
+    $("left").textContent=money(Math.max(0,CONFIG.goal-amount));
+  }
+  document.querySelectorAll("#ms li").forEach((li,i)=>{
+    const done=amount>=STAGES[i].at&&i>0||(i===0);
+    li.classList.toggle("done",done);
+    li.querySelector(".box").textContent=done?"\u2713":"";
+  });
+}
+$("goal").textContent=money(CONFIG.goal);
+$("update").textContent=CONFIG.update;
+$("gfm").href=CONFIG.gofundmeUrl;
+$("exampleNote").hidden=!CONFIG.isExample;
+$("ms").innerHTML=STAGES.map(s=>'<li><span class="box"></span><div><b>'+s.name+'</b><small>'+s.note+'</small></div><span class="amt">'+(s.at?money(s.at):"Start")+'</span></li>').join("");
+$("preview").value=CONFIG.raised;
+$("preview").addEventListener("input",e=>render(+e.target.value,false));
+render(CONFIG.raised,true);
+</script>
+</body>
+</html>
